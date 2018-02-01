@@ -1,0 +1,5 @@
+sitemap 406c label="406C" {
+  Frame {
+    Switch item=LED
+  }
+}
