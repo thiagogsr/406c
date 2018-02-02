@@ -1,5 +1,15 @@
 sitemap 406c label="406C" {
-  Frame {
-    Switch item=LED
-  }
+    Frame {
+        Group item=Office
+    }
+
+    Frame {
+        Text label="Temperature" icon="temperature" {
+            Default item=Office_Temperature label="Office"
+        }
+
+        Text label="Humidity" icon="humidity" {
+            Default item=Office_Humidity label="Office"
+        }
+    }
 }

@@ -1,0 +1,9 @@
+Group    Home                 "406C"          <house>
+
+Group    Office               "Office"        <office>        (Home)
+
+Number   Office_Temperature   "Temperature [%.1f ºC]"   <temperature>   (Office, gTemperature)      {mqtt="<[rpi:home/office/temperature:state:default]"}
+Number   Office_Humidity      "Humidity [%.1f%%]"       <humidity>      (Office, gHumidity)         {mqtt="<[rpi:home/office/humidity:state:default]"}
+
+Group:Number:AVG   gTemperature   "Temperature"   <temperature>   (Home)
+Group:Number:AVG   gHumidity      "Humidity"      <humidity>      (Home)
