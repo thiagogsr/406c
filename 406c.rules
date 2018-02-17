@@ -3,7 +3,7 @@ when
     Item RPI_Temperature changed
 then
     var temperature = RPI_Temperature.state
-    if (temperature > 47) {
-        sendTelegram("406cBot", "A temperatura do RPI está %s", temperature.toString)
+    if (temperature > 50) {
+        sendTelegram("406cBot", "A temperatura do RPI está %sºC", temperature.toString)
     }
 end
