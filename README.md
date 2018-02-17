@@ -11,6 +11,7 @@
 ### Cronjob
 
 - `*/5 * * * * /usr/bin/python /path_to_dht22.py`
+- `*/5 * * * * /usr/bin/python /path_to_rpi.py`
 
 ### KB
 
@@ -19,3 +20,4 @@
 - https://www.embarcados.com.br/raspberry-pi-3-na-iot-mqtt-e-python/
 - https://docs.openhab.org/addons/bindings/mqtt1/readme.html
 - https://www.hackster.io/adamgarbo/raspberry-pi-2-iot-thingspeak-dht22-sensor-b208f4
+- https://medium.com/@kevalpatel2106/monitor-the-core-temperature-of-your-raspberry-pi-3ddfdf82989f
