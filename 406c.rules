@@ -1,0 +1,9 @@
+rule "Send telegram"
+when
+    Item RPI_Temperature changed
+then
+    var temperature = RPI_Temperature.state
+    if (temperature > 47) {
+        sendTelegram("406cBot", "A temperatura do RPI está %s", temperature.toString)
+    }
+end
