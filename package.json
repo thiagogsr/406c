@@ -24,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/thiagogsr/406c/issues"
   },
-  "homepage": "https://github.com/thiagogsr/406c#readme"
+  "homepage": "https://github.com/thiagogsr/406c#readme",
+  "dependencies": {
+    "@google-cloud/pubsub": "^0.16.4"
+  }
 }
