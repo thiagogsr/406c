@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/thiagogsr/406c#readme",
   "dependencies": {
-    "@google-cloud/pubsub": "^0.16.4"
+    "@google-cloud/pubsub": "^0.16.4",
+    "node-dht-sensor": "0.0.34"
   }
 }
