@@ -1,7 +1,7 @@
 var sensor = require('node-dht-sensor');
 
 const sensorType = 22;
-const sensorPin = 24;
+const sensorPin = 23;
 
 sensor.read(sensorType, sensorPin, function(err, temperature, humidity) {
   if (!err) {
