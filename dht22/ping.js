@@ -1,12 +1,14 @@
-var sensor = require('node-dht-sensor');
+const sensor = require('node-dht-sensor');
+const pubsub = require('../pubsub');
 
 const sensorType = 22;
 const sensorPin = 23;
+const temperatureTopic = 'home-office-temperature';
+const humidityTopic = 'home-office-humidity';
 
 sensor.read(sensorType, sensorPin, function(err, temperature, humidity) {
   if (!err) {
-    console.log('temp: ' + temperature.toFixed(1) + '°C, ' +
-                'humidity: ' + humidity.toFixed(1) + '%'
-    );
+    pubsub.publishMessage(temperatureTopic, temperature.toFixed(1));
+    pubsub.publishMessage(humidityTopic, humidity.toFixed(1));
   }
 });
