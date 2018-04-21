@@ -21,23 +21,23 @@ def transmit_code(code, num_attemps):
         for i in code:
             if i == '1':
                 GPIO.output(TRANSMIT_PIN, 1)
-                time.sleep(.00055);
+                time.sleep(.00055)
                 GPIO.output(TRANSMIT_PIN, 0)
             elif i == '2':
                 GPIO.output(TRANSMIT_PIN, 0)
-                time.sleep(.00011);
+                time.sleep(.00011)
                 GPIO.output(TRANSMIT_PIN, 1)
             elif i == '3':
                 GPIO.output(TRANSMIT_PIN, 0)
-                time.sleep(.000303);
+                time.sleep(.000303)
                 GPIO.output(TRANSMIT_PIN, 1)
             elif i == '4':
                 GPIO.output(TRANSMIT_PIN, 1)
-                time.sleep(.00011);
+                time.sleep(.00011)
                 GPIO.output(TRANSMIT_PIN, 0)
             elif i == '5':
                 GPIO.output(TRANSMIT_PIN, 1)
-                time.sleep(.00029);
+                time.sleep(.00029)
                 GPIO.output(TRANSMIT_PIN, 0)
             else:
                 continue
