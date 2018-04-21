@@ -1,22 +1,23 @@
 import time
 import sys
 import RPi.GPIO as GPIO
+import paho.mqtt.client as mqtt
 
-off =  '1242424352424342424242424242425342524342'
-on  =  '124242435242434242424242424242425243424242'
+broker = "localhost"
+port = 1883
+timeout = 60
+topic = "home/office/light"
 
-if sys.argv[1:] == 'off':
-    NUM_ATTEMPTS = 1000
-else:
-    NUM_ATTEMPTS = 150
+off = '1242424352424342424242424242425342524342'
+on  = '124242435242434242424242424242425243424242'
 
 TRANSMIT_PIN = 23
 
-def transmit_code(code):
+def transmit_code(code, num_attemps):
     '''Transmit a chosen code string using the GPIO transmitter'''
     GPIO.setmode(GPIO.BCM)
     GPIO.setup(TRANSMIT_PIN, GPIO.OUT)
-    for t in range(NUM_ATTEMPTS):
+    for t in range(num_attemps):
         for i in code:
             if i == '1':
                 GPIO.output(TRANSMIT_PIN, 1)
@@ -43,10 +44,28 @@ def transmit_code(code):
         GPIO.output(TRANSMIT_PIN, 0)
     GPIO.cleanup()
 
-if __name__ == '__main__':
-    for argument in sys.argv[1:]:
-        exec('transmit_code(' + str(argument) + ')')
+def on_connect(client, userdata, flags, rc):
+    client.subscribe(topic)
 
+def on_message(client, userdata, msg):
+    argument = str(msg.payload).lower()
+    print("switch state changed to " + argument)
+    
+    if argument == 'off':
+        num_attemps = 1000
+    else:
+        num_attemps = 150
+
+    exec('transmit_code(' + str(argument) + ', ' + str(num_attemps) + ')')
+
+try:
+  client = mqtt.Client()
+  client.on_connect = on_connect
+  client.on_message = on_message
+  client.connect(broker, port, timeout)
+  client.loop_forever()
+except KeyboardInterrupt:
+  sys.exit(0)
 
 # How to use:: I am putting this here, because it seems few people have figured out livolo switches.
 # Hold down livolo light switch for 5 seconds and wait for a beep.
