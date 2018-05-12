@@ -1,3 +1,6 @@
 Group Home "406C" <house>
 Group Office "Office" <office> (Home)
+Group LivingRoom "Living Room" <sofa> (Home)
+
 Switch Office_Light "Light" <light> (Office) {mqtt=">[rpi:home/office/light:command:*:default],<[rpi:home/office/light:state:default]"}
+Rollershutter LivingRoom_TV "TV" <screen> (LivingRoom) {mqtt=">[rpi:home/living/tv:command:*:default]"}

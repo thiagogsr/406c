@@ -2,4 +2,8 @@ sitemap 406c label="406C" {
     Frame label="Office" {
         Switch item=Office_Light
     }
+
+    Frame label="Living Room" {
+        Default item=LivingRoom_TV
+    }
 }
