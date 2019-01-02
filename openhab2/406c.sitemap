@@ -1,6 +1,27 @@
 sitemap 406c label="406C" {
-    Frame {
-        Text item=RPI_Temperature
-        Group item=Office
-    }
+  Frame label="Livingroom" {
+    Switch item=Livingroom_Light
+    Switch item=Corridor_Light
+  }
+
+  Frame label="Balcony" {
+  }
+
+  Frame label="Kitchen" {
+  }
+
+  Frame label="Laundry" {
+  }
+
+  Frame label="Suite" {
+  }
+
+  Frame label="Office" {
+  }
+
+  Frame label="GuestRoom" {
+  }
+
+  Frame label="WC" {
+  }
 }

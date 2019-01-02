@@ -1,0 +1,14 @@
+Bridge mqtt:bridge:rpi "RPI MQTT Broker" [ host="localhost", secure=false, username="rpi", password="rpi", clientID="rpiMQTTclient" ]
+{
+  Thing topic livingroomLightTH "livingroomLightTH" {
+    Channels:
+      Type switch : PowerSwitch [stateTopic="stat/sonoff-6765/POWER1" , transformationPattern="JSONPATH:$.POWER1" , commandTopic="cmnd/sonoff-6765/POWER1", on="ON", off="OFF"]
+      Type string : Version [stateTopic="stat/sonoff-6765/STATUS2", transformationPattern="JSONPATH:$.StatusFWR.Version"]
+  }
+
+  Thing topic corridorLightTH "corridorLightTH" {
+    Channels:
+      Type switch : PowerSwitch [stateTopic="stat/sonoff-6765/POWER2" , transformationPattern="JSONPATH:$.POWER2" , commandTopic="cmnd/sonoff-6765/POWER2", on="ON", off="OFF"]
+      Type string : Version [stateTopic="stat/sonoff-6765/STATUS2", transformationPattern="JSONPATH:$.StatusFWR.Version"]
+  }
+}

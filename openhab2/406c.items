@@ -1,8 +1,20 @@
 Group    Home                 "406C"          <house>
 
-Group    Office               "Office"        <office>        (Home)
+Group    Livingroom           "Livingroom"     <living>         (Home)
 
-Number   Office_Temperature   "Temperature [%.1f ºC]"       <temperature>   (Office)    {mqtt="<[rpi:home/office/temperature:state:default]"}
-Number   Office_Humidity      "Humidity [%.1f%%]"           <humidity>      (Office)    {mqtt="<[rpi:home/office/humidity:state:default]"}
+Switch   Livingroom_Light     "Livingroom Light" <light> (Livingroom) { channel="mqtt:topic:rpi:livingroomLightTH:PowerSwitch" }
+Switch   Corridor_Light       "Corridor Light"   <light> (Livingroom) { channel="mqtt:topic:rpi:corridorLightTH:PowerSwitch" }
 
-Number   RPI_Temperature      "RPI Temperature [%.1f ºC]"   <temperature>   (Home)      {mqtt="<[rpi:rpi/temperature:state:default]"}
+Group    Balcony              "Balcony"        <terrace>        (Home)
+
+Group    Kitchen              "Kitchen"        <kitchen>        (Home)
+
+Group    Laundry              "Laundry"        <washingmachine> (Home)
+
+Group    Suite                "Suite"          <bedroom>        (Home)
+
+Group    Office               "Office"         <office>         (Home)
+
+Group    GuestRoom            "Guest Room"     <bedroom>        (Home)
+
+Group    WC                   "W.C."           <bath>           (Home)
