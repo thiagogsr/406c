@@ -9,23 +9,37 @@ sitemap 406c label="406C" {
   }
 
   Frame label="Balcony" {
+    Switch item=Livingroom_Light
+    Switch item=Corridor_Light
   }
 
   Frame label="Kitchen" {
+    Switch item=Livingroom_Light
+    Switch item=Corridor_Light
   }
 
   Frame label="Laundry" {
+    Switch item=Livingroom_Light
+    Switch item=Corridor_Light
   }
 
   Frame label="Suite" {
+    Switch item=Livingroom_Light
+    Switch item=Corridor_Light
   }
 
   Frame label="Office" {
+    Switch item=Livingroom_Light
+    Switch item=Corridor_Light
   }
 
   Frame label="GuestRoom" {
+    Switch item=Livingroom_Light
+    Switch item=Corridor_Light
   }
 
   Frame label="WC" {
+    Switch item=Livingroom_Light
+    Switch item=Corridor_Light
   }
 }

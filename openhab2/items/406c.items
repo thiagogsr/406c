@@ -5,8 +5,8 @@ String   Sonoff_Action        "Sonoff Action"  <wallswitch>
 
 Group    Livingroom           "Livingroom"     <living>         (Home)
 
-Switch   Livingroom_Light     "Livingroom Light" <light> (Livingroom,Sonoff) { channel="mqtt:topic:rpi:livingroomLightTH:PowerSwitch" }
-Switch   Corridor_Light       "Corridor Light"   <light> (Livingroom,Sonoff) { channel="mqtt:topic:rpi:corridorLightTH:PowerSwitch" }
+Switch   Livingroom_Light     "Livingroom Light" <light> (Livingroom,Sonoff) { channel="mqtt:topic:rpi:livingroomTH:livingroomLight" }
+Switch   Corridor_Light       "Corridor Light"   <light> (Livingroom,Sonoff) { channel="mqtt:topic:rpi:livingroomTH:corridorLight" }
 
 Group    Balcony              "Balcony"        <terrace>        (Home)
 
