@@ -1,0 +1,39 @@
+sitemap 406c label="406C" {
+  Frame {
+    Switch item=Sonoff_Action mappings=[restart="Restart", status="Status", upgrade="Upgrade"]
+  }
+
+  Frame label="Livingroom" {
+    Switch item=Livingroom_Light
+    Switch item=Corridor_Light
+    Text item=Livingroom_Version
+  }
+
+  Frame label="Balcony" {
+    Text label="Coming soon"
+  }
+
+  Frame label="Kitchen" {
+    Text label="Coming soon"
+  }
+
+  Frame label="Laundry" {
+    Text label="Coming soon"
+  }
+
+  Frame label="Suite" {
+    Text label="Coming soon"
+  }
+
+  Frame label="Office" {
+    Text label="Coming soon"
+  }
+
+  Frame label="GuestRoom" {
+    Text label="Coming soon"
+  }
+
+  Frame label="WC" {
+    Text label="Coming soon"
+  }
+}

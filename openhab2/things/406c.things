@@ -1,0 +1,9 @@
+Bridge mqtt:broker:rpi [ host="192.168.25.50", secure=false, username="openhabian", password="openhabian", clientID="openhabClient" ]
+{
+  Thing topic livingroomTH {
+    Channels:
+      Type switch : livingroomLight [stateTopic="stat/sonoff-DB5A6D/POWER1", commandTopic="cmnd/sonoff-DB5A6D/POWER1", on="ON", off="OFF"]
+      Type switch : corridorLight [stateTopic="stat/sonoff-DB5A6D/POWER2", commandTopic="cmnd/sonoff-DB5A6D/POWER2", on="ON", off="OFF"]
+      Type string : version [stateTopic="stat/sonoff-DB5A6D/STATUS2", transformationPattern="JSONPATH:$.StatusFWR.Version"]
+  }
+}

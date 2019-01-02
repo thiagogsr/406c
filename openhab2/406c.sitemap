@@ -1,6 +1,0 @@
-sitemap 406c label="406C" {
-    Frame {
-        Text item=RPI_Temperature
-        Group item=Office
-    }
-}

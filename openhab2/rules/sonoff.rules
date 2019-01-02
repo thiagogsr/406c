@@ -1,0 +1,22 @@
+val sonoffDevices = newArrayList("sonoffs")
+
+rule "Sonoff Maintenance"
+when
+    Item Sonoff_Action received command
+then 
+    logInfo("sonoff.rules", "Sonoff Maintenance on all devices: " + receivedCommand)
+    val mqttActions = getActions("mqtt", "mqtt:broker:rpi")
+    for (String deviceID : sonoffDevices) {
+        switch (receivedCommand) {
+            case "restart" :
+                mqttActions.publishMQTT("cmnd/" + deviceID + "/restart", "1") 
+            case "status" :
+                mqttActions.publishMQTT("cmnd/" + deviceID + "/status", "2")
+            case "upgrade" : {
+                mqttActions.publishMQTT("cmnd/" + deviceID + "/otaurl", "http://thehackbox.org/tasmota/release/sonoff.bin")
+                mqttActions.publishMQTT("cmnd/" + deviceID + "/upgrade", "1")
+            }
+        }
+    }
+    Sonoff_Action.postUpdate(NULL)
+end

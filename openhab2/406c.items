@@ -1,8 +1,0 @@
-Group    Home                 "406C"          <house>
-
-Group    Office               "Office"        <office>        (Home)
-
-Number   Office_Temperature   "Temperature [%.1f ºC]"       <temperature>   (Office)    {mqtt="<[rpi:home/office/temperature:state:default]"}
-Number   Office_Humidity      "Humidity [%.1f%%]"           <humidity>      (Office)    {mqtt="<[rpi:home/office/humidity:state:default]"}
-
-Number   RPI_Temperature      "RPI Temperature [%.1f ºC]"   <temperature>   (Home)      {mqtt="<[rpi:rpi/temperature:state:default]"}
