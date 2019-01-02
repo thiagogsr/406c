@@ -1,12 +1,12 @@
 Group    Home                 "406C"           <house>
 
-Group    Sonoff
 String   Sonoff_Action        "Sonoff Action"  <wallswitch>
 
 Group    Livingroom           "Livingroom"     <living>         (Home)
 
-Switch   Livingroom_Light     "Livingroom Light" <light> (Livingroom,Sonoff) { channel="mqtt:topic:rpi:livingroomTH:livingroomLight" }
-Switch   Corridor_Light       "Corridor Light"   <light> (Livingroom,Sonoff) { channel="mqtt:topic:rpi:livingroomTH:corridorLight" }
+Switch   Livingroom_Light     "Livingroom Light"     <light>      (Livingroom) { channel="mqtt:topic:rpi:livingroomTH:livingroomLight" }
+Switch   Corridor_Light       "Corridor Light"       <light>      (Livingroom) { channel="mqtt:topic:rpi:livingroomTH:corridorLight" }
+String   Livingroom_Version   "Sonoff Version: [%s]" <wallswitch> (Livingroom) { channel="mqtt:topic:rpi:livingroomTH:version"}
 
 Group    Balcony              "Balcony"        <terrace>        (Home)
 
