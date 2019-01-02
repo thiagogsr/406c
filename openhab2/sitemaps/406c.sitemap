@@ -1,6 +1,7 @@
 sitemap 406c label="406C" {
   Frame {
     Switch item=Sonoff_Action mappings=[restart="Restart", status="Status", upgrade="Upgrade"]
+    Text item=Tasmota_Release
   }
 
   Frame label="Livingroom" {

@@ -1,6 +1,9 @@
 Group    Home                 "406C"           <house>
 
-String   Sonoff_Action        "Sonoff Action"  <wallswitch>
+Group    Sonoff_Maintenance   "Sonoff Maintenance"
+
+String   Sonoff_Action        "Sonoff Action"        <settings> (Sonoff_Maintenance)
+String   Tasmota_Release      "Current Release [%s]" <settings> (Sonoff_Maintenance) { http="<[tasmotaRelease:10000:JSONPATH($[0].name)]"}
 
 Group    Livingroom           "Livingroom"     <living>         (Home)
 
