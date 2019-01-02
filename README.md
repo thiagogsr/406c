@@ -4,3 +4,9 @@
 - `openhab2/406c.sitemap` -> `/etc/openhab2/sitemaps/406c.sitemap`
 - `openhab2/406c.rules` -> `/etc/openhab2/rules/406c.rules`
 - `openhab2/406c.things` -> `/etc/openhab2/things/406c.things`
+
+### Enable add-ons
+
+- https://www.openhab.org/addons/bindings/mqtt
+- https://www.openhab.org/addons/actions/mqtt/
+- https://www.openhab.org/addons/transformations/jsonpath/

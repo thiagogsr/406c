@@ -1,4 +1,8 @@
 sitemap 406c label="406C" {
+  Frame {
+    Switch item=Sonoff_Action mappings=[restart="Restart", status="Status", upgrade="Upgrade"]
+  }
+
   Frame label="Livingroom" {
     Switch item=Livingroom_Light
     Switch item=Corridor_Light
