@@ -1,40 +1,62 @@
 sitemap 406c label="406C" {
   Frame {
-    Switch item=Sonoff_Action mappings=[restart="Restart", status="Status", upgrade="Upgrade"]
-    Text item=Tasmota_Release
+    Switch item=SonoffAction mappings=[restart="Restart", status="Status", upgrade="Upgrade"]
+    Default item=TasmotaRelease
   }
 
-  Frame label="Livingroom" {
-    Switch item=Livingroom_Light
-    Switch item=Corridor_Light
-    Text item=Livingroom_Version
+  Frame label="Sala" {
+    Text label="Estar" icon="sofa"
+    Default item=SittingLight
+    Default item=CorridorLight
+    Default item=LivingVersion
+    Text label="Jantar" icon="party"
+    Default item=TableLight
+    Default item=TableSpotsLight
+    Default item=LobbySpotsLight
+    Default item=DiningVersion
   }
 
-  Frame label="Balcony" {
-    Text label="Coming soon"
+  Frame label="Varanda" {
+    Default item=BalconyLight
+    Default item=BalconySpotsLight
+    Default item=BalconyVersion
   }
 
-  Frame label="Kitchen" {
-    Text label="Coming soon"
+  Frame label="Cozinha" {
+    Default item=KitchenLight
+    Default item=KitchenVersion
   }
 
-  Frame label="Laundry" {
-    Text label="Coming soon"
+  Frame label="Área de serviço" {
+    Default item=LaundryLight
+    Default item=LaundryVersion
   }
 
-  Frame label="Suite" {
-    Text label="Coming soon"
+  Frame label="Suíte" {
+    Default item=MasterBedroomLight
+    Default item=WardrobeLight
+    Default item=TVLight
+    Default item=MasterBedroomVersion
+    Text label="Banheiro" icon="bath"
+    Default item=MasterBathroomight
+    Default item=MasterBathroomMirrorLight
+    Default item=MasterBathroomVersion
   }
 
-  Frame label="Office" {
-    Text label="Coming soon"
+  Frame label="Escritório" {
+    Default item=OfficeLight
+    Default item=OfficeVersion
   }
 
-  Frame label="GuestRoom" {
-    Text label="Coming soon"
+  Frame label="Quarto de visitas" {
+    Default item=GuestBedroomLight
+    Default item=GuestBedroomSpotsLight
+    Default item=GuestBedroomVersion
   }
 
-  Frame label="WC" {
-    Text label="Coming soon"
+  Frame label="Banheiro social" {
+    Default item=BathroomLight
+    Default item=BathroomMirrorLight
+    Default item=BathroomVersion
   }
 }
