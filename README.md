@@ -1,7 +1,7 @@
 # House automation
 
 - Flash a SD card with [Openhabian OS](https://www.openhab.org/docs/installation/openhabian.html)
-- After setup the OS, install que MQTT Server
+- Install que MQTT Server after the OS setup
 - Change the MQTT host in `openhab2/things/406.things`
 - Move Files
   - `openhab2/items/*` -> `/etc/openhab2/items`
