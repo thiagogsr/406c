@@ -2,14 +2,14 @@ val sonoffDevices = newArrayList("sonoffs")
 
 rule "Sonoff Maintenance"
 when
-    Item Sonoff_Action received command
-then 
+    Item SonoffAction received command
+then
     logInfo("sonoff.rules", "Sonoff Maintenance on all devices: " + receivedCommand)
     val mqttActions = getActions("mqtt", "mqtt:broker:rpi")
     for (String deviceID : sonoffDevices) {
         switch (receivedCommand) {
             case "restart" :
-                mqttActions.publishMQTT("cmnd/" + deviceID + "/restart", "1") 
+                mqttActions.publishMQTT("cmnd/" + deviceID + "/restart", "1")
             case "status" :
                 mqttActions.publishMQTT("cmnd/" + deviceID + "/status", "2")
             case "upgrade" : {
@@ -18,5 +18,5 @@ then
             }
         }
     }
-    Sonoff_Action.postUpdate(NULL)
+    SonoffAction.postUpdate(NULL)
 end
