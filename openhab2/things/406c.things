@@ -1,4 +1,4 @@
-Bridge mqtt:broker:rpi [ host="192.168.25.50", secure=false, username="openhabian", password="openhabian", clientID="openhabClient" ]
+Bridge mqtt:broker:rpi [ host="192.168.25.147", secure=false, clientID="openhabClient" ]
 {
   Thing topic livingTH {
     Channels:
