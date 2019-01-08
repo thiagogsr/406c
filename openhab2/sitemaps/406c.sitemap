@@ -20,7 +20,6 @@ sitemap 406c label="406C" {
     Text label="Estar" icon="sofa"
     Default item=SittingLight
     Default item=CorridorLight
-    Default item=LivingVersion
     Text label="Jantar" icon="party"
     Default item=TableLight
     Default item=TableSpotsLight
