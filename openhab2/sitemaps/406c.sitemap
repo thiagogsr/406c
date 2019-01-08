@@ -1,7 +1,19 @@
 sitemap 406c label="406C" {
   Frame {
-    Switch item=SonoffAction mappings=[restart="Restart", status="Status", upgrade="Upgrade"]
-    Default item=TasmotaRelease
+    Group item=SonoffMaintenance {
+      Switch item=SonoffAction mappings=[restart="Restart", status="Status", upgrade="Upgrade"]
+      Default item=TasmotaRelease
+      Default item=LivingVersion
+      Default item=DiningVersion
+      Default item=BalconyVersion
+      Default item=KitchenVersion
+      Default item=LaundryVersion
+      Default item=MasterBedroomVersion
+      Default item=MasterBathroomVersion
+      Default item=OfficeVersion
+      Default item=GuestBedroomVersion
+      Default item=BathroomVersion
+    }
   }
 
   Frame label="Sala" {
@@ -13,50 +25,41 @@ sitemap 406c label="406C" {
     Default item=TableLight
     Default item=TableSpotsLight
     Default item=LobbySpotsLight
-    Default item=DiningVersion
   }
 
   Frame label="Varanda" {
     Default item=BalconyLight
     Default item=BalconySpotsLight
-    Default item=BalconyVersion
   }
 
   Frame label="Cozinha" {
     Default item=KitchenLight
-    Default item=KitchenVersion
   }
 
   Frame label="Área de serviço" {
     Default item=LaundryLight
-    Default item=LaundryVersion
   }
 
   Frame label="Suíte" {
     Default item=MasterBedroomLight
     Default item=WardrobeLight
     Default item=TVLight
-    Default item=MasterBedroomVersion
     Text label="Banheiro" icon="bath"
     Default item=MasterBathroomight
     Default item=MasterBathroomMirrorLight
-    Default item=MasterBathroomVersion
   }
 
   Frame label="Escritório" {
     Default item=OfficeLight
-    Default item=OfficeVersion
   }
 
   Frame label="Quarto de visitas" {
     Default item=GuestBedroomLight
     Default item=GuestBedroomSpotsLight
-    Default item=GuestBedroomVersion
   }
 
   Frame label="Banheiro social" {
     Default item=BathroomLight
     Default item=BathroomMirrorLight
-    Default item=BathroomVersion
   }
 }
