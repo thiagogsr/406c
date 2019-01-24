@@ -37,9 +37,10 @@ Switch   MasterBathroomMirrorLight "Espelho"              <light>     (MasterBat
 Switch   MasterBathroomight        "Principal"            <light>     (MasterBathroom) { channel="mqtt:topic:rpi:masterBathroomTH:mainLight" }
 String   MasterBathroomVersion     "Master bathroom Version [%s]"  <settings>  (MasterBathroom, SonoffMaintenance) { channel="mqtt:topic:rpi:masterBathroomTH:version"}
 
-Group    Office              "Escritório"           <office>     (Home)
-Switch   OfficeLight         "Principal"            <light>      (Office) { channel="mqtt:topic:rpi:officeTH:mainLight" }
-String   OfficeVersion       "Office Version [%s]"  <settings>   (Office, SonoffMaintenance) { channel="mqtt:topic:rpi:officeTH:version"}
+Group    Office               "Escritório"           <office>     (Home)
+Switch   OfficeLight          "Principal"            <light>      (Office) { channel="mqtt:topic:rpi:officeTH:mainLight" }
+Switch   OfficeAirConditioner "Ar condicionado"      <climate>    (Office) { channel="mqtt:topic:rpi:officeTH:airConditioner" }
+String   OfficeVersion        "Office Version [%s]"  <settings>   (Office, SonoffMaintenance) { channel="mqtt:topic:rpi:officeTH:version"}
 
 Group    GuestBedroom           "Quarto de visitas"    <bedroom>    (Home)
 Switch   GuestBedroomSpotsLight "Spots"                <light>      (GuestBedroom) { channel="mqtt:topic:rpi:guestBedroomTH:spotsLight" }

@@ -52,6 +52,7 @@ Bridge mqtt:broker:rpi [ host="192.168.25.147", secure=false, clientID="openhabC
   Thing topic officeTH {
     Channels:
       Type switch : mainLight [stateTopic="stat/sonoff-DB5A6D/POWER1", commandTopic="cmnd/sonoff-DB5A6D/POWER1", on="ON", off="OFF"]
+      Type switch : airConditioner [commandTopic="broadlink/office/airconditioner", on="on", off="off"]
       Type string : version [stateTopic="stat/sonoff-DB5A6D/STATUS2", transformationPattern="JSONPATH:$.StatusFWR.Version"]
   }
 

@@ -50,6 +50,7 @@ sitemap 406c label="406C" {
 
   Frame label="Escritório" {
     Default item=OfficeLight
+    Default item=OfficeAirConditioner
   }
 
   Frame label="Quarto de visitas" {
