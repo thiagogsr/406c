@@ -1,72 +1,57 @@
-Bridge mqtt:broker:rpi [ host="192.168.25.147", secure=false, clientID="openhabClient" ]
+Bridge mqtt:broker:rpi [ host="192.168.0.113", secure=false, clientID="openhabClient" ]
 {
-  Thing topic livingTH {
+  Thing topic sala-tv-th {
     Channels:
-      Type switch : sittingLight [stateTopic="stat/sonoff-DB5A6D/POWER1", commandTopic="cmnd/sonoff-DB5A6D/POWER1", on="ON", off="OFF"]
-      Type switch : corridorLight [stateTopic="stat/sonoff-DB5A6D/POWER2", commandTopic="cmnd/sonoff-DB5A6D/POWER2", on="ON", off="OFF"]
-      Type string : version [stateTopic="stat/sonoff-DB5A6D/STATUS2", transformationPattern="JSONPATH:$.StatusFWR.Version"]
+      Type switch : sala-light [stateTopic="stat/sala-tv/POWER1", commandTopic="cmnd/sala-tv/POWER1", on="ON", off="OFF"]
+      Type string : version [stateTopic="stat/sala-tv/STATUS2", transformationPattern="JSONPATH:$.StatusFWR.Version"]
   }
 
-  Thing topic diningTH {
+  Thing topic varanda-th {
     Channels:
-      Type switch : tableLight [stateTopic="stat/sonoff-DB5A6D/POWER1", commandTopic="cmnd/sonoff-DB5A6D/POWER1", on="ON", off="OFF"]
-      Type switch : lobbySpotsLight [stateTopic="stat/sonoff-DB5A6D/POWER2", commandTopic="cmnd/sonoff-DB5A6D/POWER2", on="ON", off="OFF"]
-      Type switch : tableSpotsLight [stateTopic="stat/sonoff-DB5A6D/POWER3", commandTopic="cmnd/sonoff-DB5A6D/POWER3", on="ON", off="OFF"]
-      Type string : version [stateTopic="stat/sonoff-DB5A6D/STATUS2", transformationPattern="JSONPATH:$.StatusFWR.Version"]
+      Type switch : varanda-light [stateTopic="stat/sala-tv/POWER3", commandTopic="cmnd/sala-tv/POWER3", on="ON", off="OFF"]
+      Type switch : cortina-light [stateTopic="stat/sala-tv/POWER2", commandTopic="cmnd/sala-tv/POWER2", on="ON", off="OFF"]
+      Type string : version [stateTopic="stat/sala-tv/STATUS2", transformationPattern="JSONPATH:$.StatusFWR.Version"]
   }
 
-  Thing topic balconyTH {
+  Thing topic sala-jantar-th {
     Channels:
-      Type switch : mainLight [stateTopic="stat/sonoff-DB5A6D/POWER1", commandTopic="cmnd/sonoff-DB5A6D/POWER1", on="ON", off="OFF"]
-      Type switch : spotsLight [stateTopic="stat/sonoff-DB5A6D/POWER2", commandTopic="cmnd/sonoff-DB5A6D/POWER2", on="ON", off="OFF"]
-      Type string : version [stateTopic="stat/sonoff-DB5A6D/STATUS2", transformationPattern="JSONPATH:$.StatusFWR.Version"]
+      Type switch : mesa-light [stateTopic="stat/sala-jantar/POWER3", commandTopic="cmnd/sala-jantar/POWER3", on="ON", off="OFF"]
+      Type switch : entrada-light [stateTopic="stat/sala-jantar/POWER2", commandTopic="cmnd/sala-jantar/POWER2", on="ON", off="OFF"]
+      Type switch : passagem-light [stateTopic="stat/sala-jantar/POWER1", commandTopic="cmnd/sala-jantar/POWER1", on="ON", off="OFF"]
+      Type string : version [stateTopic="stat/sala-jantar/STATUS2", transformationPattern="JSONPATH:$.StatusFWR.Version"]
   }
 
-  Thing topic kitchenTH {
+  Thing topic cozinha-th {
     Channels:
-      Type switch : mainLight [stateTopic="stat/sonoff-DB5A6D/POWER1", commandTopic="cmnd/sonoff-DB5A6D/POWER1", on="ON", off="OFF"]
-      Type string : version [stateTopic="stat/sonoff-DB5A6D/STATUS2", transformationPattern="JSONPATH:$.StatusFWR.Version"]
+      Type switch : cozinha-light [stateTopic="stat/cozinha/POWER1", commandTopic="cmnd/cozinha/POWER1", on="ON", off="OFF"]
+      Type string : version [stateTopic="stat/cozinha/STATUS2", transformationPattern="JSONPATH:$.StatusFWR.Version"]
   }
 
-  Thing topic laundryTH {
+  Thing topic lavanderia-th {
     Channels:
-      Type switch : mainLight [stateTopic="stat/sonoff-DB5A6D/POWER1", commandTopic="cmnd/sonoff-DB5A6D/POWER1", on="ON", off="OFF"]
-      Type string : version [stateTopic="stat/sonoff-DB5A6D/STATUS2", transformationPattern="JSONPATH:$.StatusFWR.Version"]
+      Type switch : lavanderia-light [stateTopic="stat/cozinha/POWER2", commandTopic="cmnd/cozinha/POWER2", on="ON", off="OFF"]
+      Type string : version [stateTopic="stat/cozinha/STATUS2", transformationPattern="JSONPATH:$.StatusFWR.Version"]
   }
 
-  Thing topic masterBedroomTH {
+  Thing topic quarto-th {
     Channels:
-      Type switch : mainLight [stateTopic="stat/sonoff-DB5A6D/POWER1", commandTopic="cmnd/sonoff-DB5A6D/POWER1", on="ON", off="OFF"]
-      Type switch : wardrobeLigth [stateTopic="stat/sonoff-DB5A6D/POWER2", commandTopic="cmnd/sonoff-DB5A6D/POWER2", on="ON", off="OFF"]
-      Type switch : TVLight [stateTopic="stat/sonoff-DB5A6D/POWER3", commandTopic="cmnd/sonoff-DB5A6D/POWER3", on="ON", off="OFF"]
-      Type string : version [stateTopic="stat/sonoff-DB5A6D/STATUS2", transformationPattern="JSONPATH:$.StatusFWR.Version"]
+      Type switch : quarto-light1 [stateTopic="stat/quarto/POWER1", commandTopic="cmnd/quarto/POWER1", on="ON", off="OFF"]
+      Type switch : quarto-light2 [stateTopic="stat/quarto/POWER2", commandTopic="cmnd/quarto/POWER2", on="ON", off="OFF"]
+      Type switch : quarto-light3 [stateTopic="stat/quarto/POWER3", commandTopic="cmnd/quarto/POWER3", on="ON", off="OFF"]
+      Type string : version [stateTopic="stat/quarto/STATUS2", transformationPattern="JSONPATH:$.StatusFWR.Version"]
   }
 
-  Thing topic masterBathroomTH {
+  Thing topic office-th {
     Channels:
-      Type switch : mirrorLight [stateTopic="stat/sonoff-DB5A6D/POWER1", commandTopic="cmnd/sonoff-DB5A6D/POWER1", on="ON", off="OFF"]
-      Type switch : mainLight [stateTopic="stat/sonoff-DB5A6D/POWER2", commandTopic="cmnd/sonoff-DB5A6D/POWER2", on="ON", off="OFF"]
-      Type string : version [stateTopic="stat/sonoff-DB5A6D/STATUS2", transformationPattern="JSONPATH:$.StatusFWR.Version"]
+      Type switch : office-light [stateTopic="stat/office/POWER1", commandTopic="cmnd/office/POWER1", on="ON", off="OFF"]
+      Type switch : air-conditioner [commandTopic="broadlink/office/airconditioner", on="on", off="off"]
+      Type string : version [stateTopic="stat/office/STATUS2", transformationPattern="JSONPATH:$.StatusFWR.Version"]
   }
 
-  Thing topic officeTH {
+  Thing topic closet-th {
     Channels:
-      Type switch : mainLight [stateTopic="stat/sonoff-DB5A6D/POWER1", commandTopic="cmnd/sonoff-DB5A6D/POWER1", on="ON", off="OFF"]
-      Type switch : airConditioner [commandTopic="broadlink/office/airconditioner", on="on", off="off"]
-      Type string : version [stateTopic="stat/sonoff-DB5A6D/STATUS2", transformationPattern="JSONPATH:$.StatusFWR.Version"]
-  }
-
-  Thing topic guestBedroomTH {
-    Channels:
-      Type switch : mainLight [stateTopic="stat/sonoff-DB5A6D/POWER1", commandTopic="cmnd/sonoff-DB5A6D/POWER1", on="ON", off="OFF"]
-      Type switch : spotsLight [stateTopic="stat/sonoff-DB5A6D/POWER2", commandTopic="cmnd/sonoff-DB5A6D/POWER2", on="ON", off="OFF"]
-      Type string : version [stateTopic="stat/sonoff-DB5A6D/STATUS2", transformationPattern="JSONPATH:$.StatusFWR.Version"]
-  }
-
-  Thing topic bathroomTH {
-    Channels:
-      Type switch : mirrorLight [stateTopic="stat/sonoff-DB5A6D/POWER1", commandTopic="cmnd/sonoff-DB5A6D/POWER1", on="ON", off="OFF"]
-      Type switch : mainLight [stateTopic="stat/sonoff-DB5A6D/POWER2", commandTopic="cmnd/sonoff-DB5A6D/POWER2", on="ON", off="OFF"]
-      Type string : version [stateTopic="stat/sonoff-DB5A6D/STATUS2", transformationPattern="JSONPATH:$.StatusFWR.Version"]
+      Type switch : closet-light [stateTopic="stat/closet/POWER2", commandTopic="cmnd/closet/POWER2", on="ON", off="OFF"]
+      Type switch : espelho-light [stateTopic="stat/closet/POWER1", commandTopic="cmnd/closet/POWER1", on="ON", off="OFF"]
+      Type string : version [stateTopic="stat/closet/STATUS2", transformationPattern="JSONPATH:$.StatusFWR.Version"]
   }
 }

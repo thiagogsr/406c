@@ -8,44 +8,37 @@ sitemap 406c label="406C" {
       Default item=BalconyVersion
       Default item=KitchenVersion
       Default item=LaundryVersion
-      Default item=MasterBedroomVersion
-      Default item=MasterBathroomVersion
+      Default item=ClosetVersion
+      Default item=BedroomVersion
       Default item=OfficeVersion
-      Default item=GuestBedroomVersion
-      Default item=BathroomVersion
     }
   }
 
   Frame label="Sala" {
-    Text label="Estar" icon="sofa"
-    Default item=SittingLight
-    Default item=CorridorLight
+    Text label="TV" icon="sofa"
+    Default item=SofaLight
     Text label="Jantar" icon="party"
     Default item=TableLight
-    Default item=TableSpotsLight
-    Default item=LobbySpotsLight
+    Default item=EntranceLight
+    Default item=PassingLight
   }
 
   Frame label="Varanda" {
     Default item=BalconyLight
-    Default item=BalconySpotsLight
+    Default item=BalconyCurtainLight
   }
 
   Frame label="Cozinha" {
     Default item=KitchenLight
   }
 
-  Frame label="Área de serviço" {
+  Frame label="Lavanderia" {
     Default item=LaundryLight
   }
 
-  Frame label="Suíte" {
-    Default item=MasterBedroomLight
-    Default item=WardrobeLight
-    Default item=TVLight
-    Text label="Banheiro" icon="bath"
-    Default item=MasterBathroomight
-    Default item=MasterBathroomMirrorLight
+  Frame label="Closet" {
+    Default item=ClosetLight
+    Default item=MirrorLight
   }
 
   Frame label="Escritório" {
@@ -53,13 +46,9 @@ sitemap 406c label="406C" {
     Default item=OfficeAirConditioner
   }
 
-  Frame label="Quarto de visitas" {
-    Default item=GuestBedroomLight
-    Default item=GuestBedroomSpotsLight
-  }
-
-  Frame label="Banheiro social" {
-    Default item=BathroomLight
-    Default item=BathroomMirrorLight
+  Frame label="Quarto" {
+    Default item=BedroomLight1
+    Default item=BedroomLight2
+    Default item=BedroomLight3
   }
 }
