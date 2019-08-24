@@ -43,12 +43,12 @@ sitemap 406c label="406C" {
 
   Frame label="Escritório" {
     Default item=OfficeLight
-    Default item=OfficeAirConditioner
   }
 
   Frame label="Quarto" {
     Default item=BedroomLight1
     Default item=BedroomLight2
     Default item=BedroomLight3
+    Default item=BedroomAirCond
   }
 }

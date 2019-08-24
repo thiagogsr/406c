@@ -38,13 +38,13 @@ Bridge mqtt:broker:rpi [ host="192.168.0.113", secure=false, clientID="openhabCl
       Type switch : quarto-light1 [stateTopic="stat/quarto/POWER1", commandTopic="cmnd/quarto/POWER1", on="ON", off="OFF"]
       Type switch : quarto-light2 [stateTopic="stat/quarto/POWER2", commandTopic="cmnd/quarto/POWER2", on="ON", off="OFF"]
       Type switch : quarto-light3 [stateTopic="stat/quarto/POWER3", commandTopic="cmnd/quarto/POWER3", on="ON", off="OFF"]
+      Type switch : ar-condicionado [commandTopic="broadlink/bedroom/airconditioner", on="on", off="off"]
       Type string : version [stateTopic="stat/quarto/STATUS2", transformationPattern="JSONPATH:$.StatusFWR.Version"]
   }
 
   Thing topic office-th {
     Channels:
       Type switch : office-light [stateTopic="stat/office/POWER1", commandTopic="cmnd/office/POWER1", on="ON", off="OFF"]
-      Type switch : air-conditioner [commandTopic="broadlink/office/airconditioner", on="on", off="off"]
       Type string : version [stateTopic="stat/office/STATUS2", transformationPattern="JSONPATH:$.StatusFWR.Version"]
   }
 
