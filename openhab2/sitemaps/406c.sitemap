@@ -1,10 +1,12 @@
 sitemap 406c label="406C" {
   Frame {
+    Switch item=HouseAction mappings=[houseoff="Desligar tudo"]
     Group item=SonoffMaintenance {
       Switch item=SonoffAction mappings=[restart="Restart", status="Status", upgrade="Upgrade"]
       Default item=TasmotaRelease
       Default item=LivingVersion
       Default item=DiningVersion
+      Default item=HallVersion
       Default item=BalconyVersion
       Default item=KitchenVersion
       Default item=LaundryVersion
@@ -15,12 +17,11 @@ sitemap 406c label="406C" {
   }
 
   Frame label="Sala" {
-    Text label="TV" icon="sofa"
     Default item=SofaLight
-    Text label="Jantar" icon="party"
     Default item=TableLight
     Default item=EntranceLight
     Default item=PassingLight
+    Default item=HallLight
   }
 
   Frame label="Varanda" {

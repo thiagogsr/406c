@@ -1,57 +1,63 @@
-Bridge mqtt:broker:rpi [ host="192.168.0.113", secure=false, clientID="openhabClient" ]
+Bridge mqtt:broker:rpi [ host="localhost", secure=false, clientID="openhabClient" ]
 {
-  Thing topic sala-tv-th {
+  Thing topic salatvTH {
     Channels:
-      Type switch : sala-light [stateTopic="stat/sala-tv/POWER1", commandTopic="cmnd/sala-tv/POWER1", on="ON", off="OFF"]
+      Type switch : salaLight [stateTopic="stat/sala-tv/POWER1", commandTopic="cmnd/sala-tv/POWER1", on="ON", off="OFF"]
       Type string : version [stateTopic="stat/sala-tv/STATUS2", transformationPattern="JSONPATH:$.StatusFWR.Version"]
   }
 
-  Thing topic varanda-th {
+  Thing topic varandaTH {
     Channels:
-      Type switch : varanda-light [stateTopic="stat/sala-tv/POWER3", commandTopic="cmnd/sala-tv/POWER3", on="ON", off="OFF"]
-      Type switch : cortina-light [stateTopic="stat/sala-tv/POWER2", commandTopic="cmnd/sala-tv/POWER2", on="ON", off="OFF"]
+      Type switch : varandaLight [stateTopic="stat/sala-tv/POWER3", commandTopic="cmnd/sala-tv/POWER3", on="ON", off="OFF"]
+      Type switch : cortinaLight [stateTopic="stat/sala-tv/POWER2", commandTopic="cmnd/sala-tv/POWER2", on="ON", off="OFF"]
       Type string : version [stateTopic="stat/sala-tv/STATUS2", transformationPattern="JSONPATH:$.StatusFWR.Version"]
   }
 
-  Thing topic sala-jantar-th {
+  Thing topic salajantarTH {
     Channels:
-      Type switch : mesa-light [stateTopic="stat/sala-jantar/POWER3", commandTopic="cmnd/sala-jantar/POWER3", on="ON", off="OFF"]
-      Type switch : entrada-light [stateTopic="stat/sala-jantar/POWER2", commandTopic="cmnd/sala-jantar/POWER2", on="ON", off="OFF"]
-      Type switch : passagem-light [stateTopic="stat/sala-jantar/POWER1", commandTopic="cmnd/sala-jantar/POWER1", on="ON", off="OFF"]
+      Type switch : mesaLight [stateTopic="stat/sala-jantar/POWER3", commandTopic="cmnd/sala-jantar/POWER3", on="ON", off="OFF"]
+      Type switch : entradaLight [stateTopic="stat/sala-jantar/POWER2", commandTopic="cmnd/sala-jantar/POWER2", on="ON", off="OFF"]
+      Type switch : passagemLight [stateTopic="stat/sala-jantar/POWER1", commandTopic="cmnd/sala-jantar/POWER1", on="ON", off="OFF"]
       Type string : version [stateTopic="stat/sala-jantar/STATUS2", transformationPattern="JSONPATH:$.StatusFWR.Version"]
   }
 
-  Thing topic cozinha-th {
+  Thing topic corredorTH {
     Channels:
-      Type switch : cozinha-light [stateTopic="stat/cozinha/POWER1", commandTopic="cmnd/cozinha/POWER1", on="ON", off="OFF"]
+      Type switch : corredorLight [stateTopic="stat/corredor/POWER1", commandTopic="cmnd/corredor/POWER1", on="ON", off="OFF"]
+      Type string : version [stateTopic="stat/corredor/STATUS2", transformationPattern="JSONPATH:$.StatusFWR.Version"]
+  }
+
+  Thing topic cozinhaTH {
+    Channels:
+      Type switch : cozinhaLight [stateTopic="stat/cozinha/POWER1", commandTopic="cmnd/cozinha/POWER1", on="ON", off="OFF"]
       Type string : version [stateTopic="stat/cozinha/STATUS2", transformationPattern="JSONPATH:$.StatusFWR.Version"]
   }
 
-  Thing topic lavanderia-th {
+  Thing topic lavanderiaTH {
     Channels:
-      Type switch : lavanderia-light [stateTopic="stat/cozinha/POWER2", commandTopic="cmnd/cozinha/POWER2", on="ON", off="OFF"]
+      Type switch : lavanderiaLight [stateTopic="stat/cozinha/POWER2", commandTopic="cmnd/cozinha/POWER2", on="ON", off="OFF"]
       Type string : version [stateTopic="stat/cozinha/STATUS2", transformationPattern="JSONPATH:$.StatusFWR.Version"]
   }
 
-  Thing topic quarto-th {
+  Thing topic quartoTH {
     Channels:
-      Type switch : quarto-light1 [stateTopic="stat/quarto/POWER1", commandTopic="cmnd/quarto/POWER1", on="ON", off="OFF"]
-      Type switch : quarto-light2 [stateTopic="stat/quarto/POWER2", commandTopic="cmnd/quarto/POWER2", on="ON", off="OFF"]
-      Type switch : quarto-light3 [stateTopic="stat/quarto/POWER3", commandTopic="cmnd/quarto/POWER3", on="ON", off="OFF"]
-      Type switch : ar-condicionado [commandTopic="broadlink/bedroom/airconditioner", on="on", off="off"]
+      Type switch : quartoLight1 [stateTopic="stat/quarto/POWER1", commandTopic="cmnd/quarto/POWER1", on="ON", off="OFF"]
+      Type switch : quartoLight2 [stateTopic="stat/quarto/POWER2", commandTopic="cmnd/quarto/POWER2", on="ON", off="OFF"]
+      Type switch : quartoLight3 [stateTopic="stat/quarto/POWER3", commandTopic="cmnd/quarto/POWER3", on="ON", off="OFF"]
+      Type switch : arCondicionado [commandTopic="broadlink/bedroom/airconditioner", on="on", off="off"]
       Type string : version [stateTopic="stat/quarto/STATUS2", transformationPattern="JSONPATH:$.StatusFWR.Version"]
   }
 
-  Thing topic office-th {
+  Thing topic officeTH {
     Channels:
-      Type switch : office-light [stateTopic="stat/office/POWER1", commandTopic="cmnd/office/POWER1", on="ON", off="OFF"]
+      Type switch : officeLight [stateTopic="stat/office/POWER1", commandTopic="cmnd/office/POWER1", on="ON", off="OFF"]
       Type string : version [stateTopic="stat/office/STATUS2", transformationPattern="JSONPATH:$.StatusFWR.Version"]
   }
 
-  Thing topic closet-th {
+  Thing topic closetTH {
     Channels:
-      Type switch : closet-light [stateTopic="stat/closet/POWER2", commandTopic="cmnd/closet/POWER2", on="ON", off="OFF"]
-      Type switch : espelho-light [stateTopic="stat/closet/POWER1", commandTopic="cmnd/closet/POWER1", on="ON", off="OFF"]
+      Type switch : closetLight [stateTopic="stat/closet/POWER2", commandTopic="cmnd/closet/POWER2", on="ON", off="OFF"]
+      Type switch : espelhoLight [stateTopic="stat/closet/POWER1", commandTopic="cmnd/closet/POWER1", on="ON", off="OFF"]
       Type string : version [stateTopic="stat/closet/STATUS2", transformationPattern="JSONPATH:$.StatusFWR.Version"]
   }
 }
