@@ -23,7 +23,7 @@ Bridge mqtt:broker:rpi [ host="localhost", secure=false, clientID="openhabClient
 
   Thing topic corredorTH {
     Channels:
-      Type switch : corredorLight [stateTopic="stat/corredor/POWER1", commandTopic="cmnd/corredor/POWER1", on="ON", off="OFF"]
+      Type switch : corredorLight [stateTopic="stat/corredor/POWER", commandTopic="cmnd/corredor/POWER", on="ON", off="OFF"]
       Type string : version [stateTopic="stat/corredor/STATUS2", transformationPattern="JSONPATH:$.StatusFWR.Version"]
   }
 
@@ -50,7 +50,7 @@ Bridge mqtt:broker:rpi [ host="localhost", secure=false, clientID="openhabClient
 
   Thing topic officeTH {
     Channels:
-      Type switch : officeLight [stateTopic="stat/office/POWER1", commandTopic="cmnd/office/POWER1", on="ON", off="OFF"]
+      Type switch : officeLight [stateTopic="stat/office/POWER", commandTopic="cmnd/office/POWER", on="ON", off="OFF"]
       Type string : version [stateTopic="stat/office/STATUS2", transformationPattern="JSONPATH:$.StatusFWR.Version"]
   }
 

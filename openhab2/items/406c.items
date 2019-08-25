@@ -48,5 +48,5 @@ Switch   BedroomAirCond       "Ar condicionado"       <climate>        (Bedroom)
 String   BedroomVersion       "Bedroom Version [%s]"  <settings>       (Bedroom, SonoffMaintenance) { channel="mqtt:topic:rpi:quartoTH:version" }
 
 Group    Office               "Escritório"            <office>         (Home)
-Switch   OfficeLight          "Principal"             <light>          (AllLights, Office) { channel="mqtt:topic:rpi:officeTH:officeLight" }
+Switch   OfficeLight          "Trilho"                <light>          (AllLights, Office) { channel="mqtt:topic:rpi:officeTH:officeLight" }
 String   OfficeVersion        "Office Version [%s]"   <settings>       (Office, SonoffMaintenance) { channel="mqtt:topic:rpi:officeTH:version" }

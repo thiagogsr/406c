@@ -1,15 +1,43 @@
 # House automation
 
 - Flash a SD card with [Openhabian OS](https://www.openhab.org/docs/installation/openhabian.html)
+
 - Edit `/etc/openhabian.conf` and reboot the system
+
 - Install que MQTT Server with `openhabian-config`
-- Move Files
-  - `scp openhab2/items/* openhabian@openhab:/etc/openhab2/items`
-  - `scp openhab2/sitemaps/* openhabian@openhab:/etc/openhab2/sitemaps`
-  - `scp openhab2/rules/* openhabian@openhab:/etc/openhab2/rules`
-  - `scp openhab2/things/* openhabian@openhab:/etc/openhab2/things`
-  - `scp openhab2/services/* openhabian@openhab:/etc/openhab2/services`
-- Reboot system
+
+- Transfer openhab2 Files
+
+
+      scp openhab2/items/* openhabian@[openhabian-ip]:/etc/openhab2/items
+      scp openhab2/sitemaps/* openhabian@[openhabian-ip]:/etc/openhab2/sitemaps
+      scp openhab2/rules/* openhabian@[openhabian-ip]:/etc/openhab2/rules
+      scp openhab2/things/* openhabian@[openhabian-ip]:/etc/openhab2/things
+      scp openhab2/services/* openhabian@[openhabian-ip]:/etc/openhab2/services
+
+
+- Clone [broadlink-mqtt](https://github.com/eschava/broadlink-mqtt.git) on home path
+
+
+    git clone https://github.com/eschava/broadlink-mqtt.git
+
+
+- Then install its requirements
+
+
+    pip install -r requirements.txt
+
+
+- Transfer broadlink commands
+
+
+    scp -r broadlink/* openhabian@[openhabian-ip]:~/broadlink-mqtt/commands
+
+
+Ensure broadlink is connected on same network. Use this [python package](https://github.com/mjg59/python-broadlink)
+to write the WiFi SSID on device.
+
+- Start `broadlink-mqtt` with `python mqtt.py`
 
 ## Docs
 
