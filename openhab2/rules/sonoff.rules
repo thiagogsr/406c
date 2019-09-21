@@ -13,7 +13,7 @@ then
             case "status" :
                 mqttActions.publishMQTT("cmnd/" + deviceID + "/status", "2")
             case "upgrade" : {
-                mqttActions.publishMQTT("cmnd/" + deviceID + "/otaurl", "http://thehackbox.org/tasmota/release/sonoff.bin")
+                mqttActions.publishMQTT("cmnd/" + deviceID + "/otaurl", "http://sonoff.maddox.co.uk/tasmota/sonoff.bin")
                 mqttActions.publishMQTT("cmnd/" + deviceID + "/upgrade", "1")
             }
         }
