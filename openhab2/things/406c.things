@@ -44,7 +44,8 @@ Bridge mqtt:broker:rpi [ host="localhost", secure=false, clientID="openhabClient
       Type switch : quartoLight1 [stateTopic="stat/quarto/POWER1", commandTopic="cmnd/quarto/POWER1", on="ON", off="OFF"]
       Type switch : quartoLight2 [stateTopic="stat/quarto/POWER2", commandTopic="cmnd/quarto/POWER2", on="ON", off="OFF"]
       Type switch : quartoLight3 [stateTopic="stat/quarto/POWER3", commandTopic="cmnd/quarto/POWER3", on="ON", off="OFF"]
-      Type switch : arCondicionado [commandTopic="broadlink/bedroom/airconditioner", on="on", off="off"]
+      Type string : arCondicionado [commandTopic="broadlink/bedroom/airconditioner", on22="on22", on23="on23", on24="on24", off="off"]
+      Type string : temperatura [stateTopic="broadlink/temperature"]
       Type string : version [stateTopic="stat/quarto/STATUS2", transformationPattern="JSONPATH:$.StatusFWR.Version"]
   }
 
