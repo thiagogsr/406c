@@ -2,6 +2,15 @@ Group    Home                 "406C"                  <house>
 
 Group    AllLights
 Group    AllBroadlinks
+Group    gSpeedtest                                   <network>        (Home)
+
+String   SpeedtestSummary     "Speedtest [%s]"                                     <network>      (gSpeedtest)
+Number   SpeedtestResultPing  "Ping [%.3f ms]"                                     <network>      (gSpeedtest)
+Number   SpeedtestResultDown  "Downlink [%.2f Mbit/s]"                             <network>      (gSpeedtest)
+Number   SpeedtestResultUp    "Uplink [%.2f Mbit/s]"                               <network>      (gSpeedtest)
+String   SpeedtestRunning     "Speedtest running ... [%s]"                         <network>      (gSpeedtest)
+Switch   SpeedtestRerun       "Start manually"                                     <network>      (gSpeedtest)
+DateTime SpeedtestResultDate  "Last executed [%1$td.%1$tm.%1$tY, %1$tH:%1$tM]"     <network>      (gSpeedtest)
 
 String   HouseAction          "House"                 <house>          (Home)
 
