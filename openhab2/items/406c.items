@@ -1,6 +1,7 @@
 Group    Home                 "406C"                  <house>
 
 Group    AllLights
+Group    AllBroadlinks
 
 String   HouseAction          "House"                 <house>          (Home)
 
@@ -44,7 +45,7 @@ Group    Bedroom              "Quarto"                <bedroom>        (Home)
 Switch   BedroomLight1        "Luzes 1"               <light>          (AllLights, Bedroom) { channel="mqtt:topic:rpi:quartoTH:quartoLight1" }
 Switch   BedroomLight2        "Luzes 2"               <light>          (AllLights, Bedroom) { channel="mqtt:topic:rpi:quartoTH:quartoLight2" }
 Switch   BedroomLight3        "Luzes 3"               <light>          (AllLights, Bedroom) { channel="mqtt:topic:rpi:quartoTH:quartoLight3" }
-String   BedroomAirCond       "Ar condicionado"       <climate>        (Bedroom) { channel="mqtt:topic:rpi:quartoTH:arCondicionado" }
+String   BedroomAirCond       "Ar condicionado"       <climate>        (AllBroadlinks, Bedroom) { channel="mqtt:topic:rpi:quartoTH:arCondicionado" }
 String   BedroomVersion       "Bedroom Version [%s]"  <settings>       (Bedroom, SonoffMaintenance) { channel="mqtt:topic:rpi:quartoTH:version" }
 
 Group    Office               "Escritório"            <office>         (Home)

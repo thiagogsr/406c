@@ -5,6 +5,7 @@ then
     logInfo("sonoff.rules", "House Action on all devices: " + receivedCommand)
 
     AllLights.members.forEach[i| i.sendCommand(OFF)]
+    AllBroadlinks.members.forEach[i| i.sendCommand("off")]
 
     HouseAction.postUpdate(NULL)
 end
