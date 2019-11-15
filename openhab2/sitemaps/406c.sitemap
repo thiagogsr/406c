@@ -16,7 +16,7 @@ sitemap 406c label="406C" {
     }
   }
 
-  Text item=SpeedtestSummary {
+  Frame item=SpeedtestSummary {
     Frame label="Resultados" {
       Text item=SpeedtestResultDown
       Text item=SpeedtestResultUp
