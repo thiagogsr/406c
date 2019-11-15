@@ -12,7 +12,7 @@ String   SpeedtestRunning     "Speedtest running ... [%s]"                      
 Switch   SpeedtestRerun       "Start manually"                                     <network>      (gSpeedtest)
 DateTime SpeedtestResultDate  "Last executed [%1$td.%1$tm.%1$tY, %1$tH:%1$tM]"     <network>      (gSpeedtest)
 
-String   HouseAction          "House"                 <house>          (Home)
+String   HouseAction          "406C"                  <house>          (Home)
 
 Group    SonoffMaintenance    "Maintenance"           <settings>       (Home)
 String   SonoffAction         "Action"                <settings>       (SonoffMaintenance)
@@ -54,7 +54,7 @@ Group    Bedroom              "Quarto"                <bedroom>        (Home)
 Switch   BedroomLight1        "Luzes 1"               <light>          (AllLights, Bedroom) { channel="mqtt:topic:rpi:quartoTH:quartoLight1" }
 Switch   BedroomLight2        "Luzes 2"               <light>          (AllLights, Bedroom) { channel="mqtt:topic:rpi:quartoTH:quartoLight2" }
 Switch   BedroomLight3        "Luzes 3"               <light>          (AllLights, Bedroom) { channel="mqtt:topic:rpi:quartoTH:quartoLight3" }
-String   BedroomAirCond       "Ar condicionado"       <climate>        (AllBroadlinks, Bedroom) { channel="mqtt:topic:rpi:quartoTH:arCondicionado" }
+String   BedroomAirCond       "Ar"                    <climate>        (AllBroadlinks, Bedroom) { channel="mqtt:topic:rpi:quartoTH:arCondicionado" }
 String   BedroomVersion       "Bedroom Version [%s]"  <settings>       (Bedroom, SonoffMaintenance) { channel="mqtt:topic:rpi:quartoTH:version" }
 
 Group    Office               "Escritório"            <office>         (Home)

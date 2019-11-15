@@ -16,16 +16,18 @@ sitemap 406c label="406C" {
     }
   }
 
-  Frame item=SpeedtestSummary {
-    Frame label="Resultados" {
-      Text item=SpeedtestResultDown
-      Text item=SpeedtestResultUp
-      Text item=SpeedtestResultPing
-    }
-    Frame label="Controle" {
-      Text item=SpeedtestResultDate
-      Text item=SpeedtestRunning label="Speedtest [%s]" visibility=[SpeedtestRunning != "-"]
-      Switch item=SpeedtestRerun mappings=[ON="Start"]
+  Frame {
+    Text item=SpeedtestSummary {
+      Frame label="Resultados" {
+        Text item=SpeedtestResultDown
+        Text item=SpeedtestResultUp
+        Text item=SpeedtestResultPing
+      }
+      Frame label="Controle" {
+        Text item=SpeedtestResultDate
+        Text item=SpeedtestRunning label="Speedtest [%s]" visibility=[SpeedtestRunning != "-"]
+        Switch item=SpeedtestRerun mappings=[ON="Start"]
+      }
     }
   }
 
