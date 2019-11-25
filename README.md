@@ -62,9 +62,20 @@ Transfer broadlink commands
 scp -r broadlink/* openhabian@$OPENHAB_IP:~/broadlink-mqtt/commands
 ```
 
-Ensure broadlink is connected on same network. Use this
+Ensure broadlink is connected on same network.
 
-Start `broadlink-mqtt` with `python mqtt.py &`
+Move `broadlink-mqtt.service` to `/etc/systemd/system/broadlink-mqtt.service`
+
+```
+scp broadlink-mqtt.service openhabian@$OPENHAB_IP:/etc/systemd/system/broadlink-mqtt.service
+```
+
+Then start it
+
+```
+sudo systemctl enable broadlink-mqtt
+sudo systemctl start broadlink-mqtt
+```
 
 ## Speed test
 

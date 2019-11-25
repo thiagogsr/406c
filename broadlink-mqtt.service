@@ -1,0 +1,13 @@
+[Unit]
+Description=Broadlink MQTT
+
+[Service]
+After=network.target
+Type=simple
+Restart=always
+RestartSec=1
+User=openhabian
+ExecStart=/usr/bin/python /home/openhabian/broadlink-mqtt/mqtt.py
+
+[Install]
+WantedBy=multi-user.target
