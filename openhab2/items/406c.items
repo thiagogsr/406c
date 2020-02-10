@@ -16,7 +16,7 @@ String   HouseAction          "406C"                  <house>          (Home)
 
 Group    SonoffMaintenance    "Maintenance"           <settings>       (Home)
 String   SonoffAction         "Action"                <settings>       (SonoffMaintenance)
-String   TasmotaRelease       "Current version [%s]"  <settings>       (SonoffMaintenance) { http="<[tasmotaRelease:10000:JSONPATH($[0].name)]" }
+String   TasmotaRelease       "Current version [%s]"  <settings>       (SonoffMaintenance)
 
 Group    Living               "Sala TV"               <living>         (Home)
 Switch   SofaLight            "Sofá"                  <light>          (AllLights, Living) { channel="mqtt:topic:rpi:salatvTH:salaLight" }

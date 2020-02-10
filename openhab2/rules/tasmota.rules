@@ -1,0 +1,10 @@
+rule "Tasmota Latest Release"
+when
+    Time cron "0 0 0 * * ?" or
+    Item SonoffAction received command status
+then
+    logInfo("tasmota.rules", "Getting the latest Tasmota Version")
+    var response = sendHttpGetRequest("https://api.github.com/repositories/80286288/tags")
+    var release = transform("JSONPATH", "$[0].name", response)
+    TasmotaRelease.postUpdate(release)
+end
