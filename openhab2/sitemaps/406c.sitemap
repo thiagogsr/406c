@@ -65,6 +65,6 @@ sitemap 406c label="406C" {
     Default item=BedroomLight1
     Default item=BedroomLight2
     Default item=BedroomLight3
-    Switch item=BedroomAirCond mappings=[off="Off", on19="19 °C", on20="20 °C", on21="21 °C", on22="22 °C"]
+    Switch item=BedroomAirCond mappings=[off="Off", on19="19 °C", on20="20 °C", on21="21 °C", on22="22 °C", on23="23 °C", on24="24 °C"]
   }
 }
