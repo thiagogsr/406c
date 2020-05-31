@@ -9,33 +9,14 @@
 
 Install que MQTT Server with `openhabian-config`
 
-## Networking
+## Network
 
-Set a fixed IP
-
-```
-sudo vim /etc/dhcpcd.conf
-```
-
-Replace the `# Example static IP configuration:` section with:
-
-```
-interface eth0
-static ip_address=192.168.0.113/24
-#static ip6_address=fd51:42f8:caae:d92e::ff/64
-static routers=192.168.0.1
-static domain_name_servers=192.168.0.1
-```
-
-Export the openhabian IP on your machine to transfer the files
-
-```
-export OPENHAB_IP=192.168.0.113
-```
+Set a fixed IP for the raspberry on your router.
 
 ## Broadlink
 
-- Set the WiFi on your broadlink with this [python package](https://github.com/mjg59/python-broadlink).
+- Set the WiFi on your broadlink device with this [python package](https://github.com/mjg59/python-broadlink).
+- Set a fixed IP for the broadlink device on your router.
 - Clone [broadlink-mqtt](https://github.com/eschava/broadlink-mqtt.git) on home path
 
 ```
@@ -46,8 +27,8 @@ Edit the `custom.conf` with:
 
 ```
 device_type = 'rm'
-device_host = '192.168.0.105'
-device_mac = '78:0f:77:b9:28:6b'
+device_host = '[broadlink-ip]'
+device_mac = '[broadlink-mac]'
 ```
 
 Then install its requirements
@@ -59,7 +40,7 @@ pip install -r requirements.txt
 Transfer broadlink commands
 
 ```
-scp -r broadlink/* openhabian@$OPENHAB_IP:~/broadlink-mqtt/commands
+scp -r broadlink/* openhabian@[raspberry-ip]:~/broadlink-mqtt/commands
 ```
 
 Ensure broadlink is connected on same network.
@@ -67,7 +48,7 @@ Ensure broadlink is connected on same network.
 Move `broadlink-mqtt.service` to `/etc/systemd/system/broadlink-mqtt.service`
 
 ```
-scp broadlink-mqtt.service openhabian@$OPENHAB_IP:/etc/systemd/system/broadlink-mqtt.service
+scp broadlink-mqtt.service openhabian@[raspberry-ip]:/etc/systemd/system/broadlink-mqtt.service
 ```
 
 Then start it
@@ -90,11 +71,11 @@ sudo python /usr/lib/python2.7/dist-packages/easy_install.py speedtest-cli
 Transfer openhab2 Files
 
 ```
-scp openhab2/items/* openhabian@$OPENHAB_IP:/etc/openhab2/items
-scp openhab2/sitemaps/* openhabian@$OPENHAB_IP:/etc/openhab2/sitemaps
-scp openhab2/rules/* openhabian@$OPENHAB_IP:/etc/openhab2/rules
-scp openhab2/things/* openhabian@$OPENHAB_IP:/etc/openhab2/things
-scp openhab2/services/* openhabian@$OPENHAB_IP:/etc/openhab2/services
+scp openhab2/items/* openhabian@[raspberry-ip]:/etc/openhab2/items
+scp openhab2/sitemaps/* openhabian@[raspberry-ip]:/etc/openhab2/sitemaps
+scp openhab2/rules/* openhabian@[raspberry-ip]:/etc/openhab2/rules
+scp openhab2/things/* openhabian@[raspberry-ip]:/etc/openhab2/things
+scp openhab2/services/* openhabian@[raspberry-ip]:/etc/openhab2/services
 ```
 
 ## Docs

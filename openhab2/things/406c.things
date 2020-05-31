@@ -10,7 +10,6 @@ Bridge mqtt:broker:rpi [ host="localhost", secure=false, clientID="openhabClient
     Channels:
       Type switch : varandaLight [stateTopic="stat/sala-tv/POWER3", commandTopic="cmnd/sala-tv/POWER3", on="ON", off="OFF"]
       Type switch : cortinaLight [stateTopic="stat/sala-tv/POWER2", commandTopic="cmnd/sala-tv/POWER2", on="ON", off="OFF"]
-      Type string : version [stateTopic="stat/sala-tv/STATUS2", transformationPattern="JSONPATH:$.StatusFWR.Version"]
   }
 
   Thing topic salajantarTH {
@@ -36,7 +35,6 @@ Bridge mqtt:broker:rpi [ host="localhost", secure=false, clientID="openhabClient
   Thing topic lavanderiaTH {
     Channels:
       Type switch : lavanderiaLight [stateTopic="stat/cozinha/POWER2", commandTopic="cmnd/cozinha/POWER2", on="ON", off="OFF"]
-      Type string : version [stateTopic="stat/cozinha/STATUS2", transformationPattern="JSONPATH:$.StatusFWR.Version"]
   }
 
   Thing topic quartoTH {

@@ -1,8 +1,8 @@
-Group    Home                 "406C"                  <house>
+Group    Home                 "406C"                      <house>
 
 Group    AllLights
 Group    AllBroadlinks
-Group    gSpeedtest                                   <network>        (Home)
+Group    gSpeedtest                                       <network>        (Home)
 
 String   SpeedtestSummary     "Speedtest [%s]"                                     <network>      (gSpeedtest)
 Number   SpeedtestResultPing  "Ping [%.3f ms]"                                     <network>      (gSpeedtest)
@@ -12,51 +12,49 @@ String   SpeedtestRunning     "Speedtest running ... [%s]"                      
 Switch   SpeedtestRerun       "Start manually"                                     <network>      (gSpeedtest)
 DateTime SpeedtestResultDate  "Last executed [%1$td.%1$tm.%1$tY, %1$tH:%1$tM]"     <network>      (gSpeedtest)
 
-String   HouseAction          "406C"                  <house>          (Home)
+String   HouseAction          "406C"                      <house>          (Home)
 
-Group    SonoffMaintenance    "Maintenance"           <settings>       (Home)
-String   SonoffAction         "Action"                <settings>       (SonoffMaintenance)
-String   TasmotaRelease       "Current version [%s]"  <settings>       (SonoffMaintenance)
+Group    SonoffMaintenance    "Maintenance"               <settings>       (Home)
+String   SonoffAction         "Action"                    <settings>       (SonoffMaintenance)
+String   TasmotaRelease       "Versão atual [%s]"         <settings>       (SonoffMaintenance)
+String   LivingVersion        "Versão da sala [%s]"       <settings>       (AllLights, Living) { channel="mqtt:topic:rpi:salatvTH:version" }
+String   DiningVersion        "Versão da entrada [%s]"    <settings>       (Dining, SonoffMaintenance) { channel="mqtt:topic:rpi:salajantarTH:version" }
+String   HallVersion          "Versão do corredor [%s]"   <settings>       (Hall, SonoffMaintenance) { channel="mqtt:topic:rpi:corredorTH:version" }
+String   KitchenVersion       "Versão da cozinha [%s]"    <settings>       (Kitchen, SonoffMaintenance) { channel="mqtt:topic:rpi:cozinhaTH:version" }
+String   ClosetVersion        "Versão do closet [%s]"     <settings>       (Closet, SonoffMaintenance) { channel="mqtt:topic:rpi:closetTH:version" }
+String   BedroomVersion       "Versão do quarto [%s]"     <settings>       (Bedroom, SonoffMaintenance) { channel="mqtt:topic:rpi:quartoTH:version" }
+String   OfficeVersion        "Versão do office [%s]"     <settings>       (Office, SonoffMaintenance) { channel="mqtt:topic:rpi:officeTH:version" }
 
-Group    Living               "Sala TV"               <living>         (Home)
-Switch   SofaLight            "Sofá"                  <light>          (AllLights, Living) { channel="mqtt:topic:rpi:salatvTH:salaLight" }
-String   LivingVersion        "Living Version [%s]"   <settings>       (AllLights, Living) { channel="mqtt:topic:rpi:salatvTH:version" }
+Group    Living               "Sala TV"                   <living>         (Home)
+Switch   SofaLight            "Sofá"                      <light>          (AllLights, Living) { channel="mqtt:topic:rpi:salatvTH:salaLight" }
 
-Group    Dining               "Sala Jantar"           <living>         (Home)
-Switch   TableLight           "Mesa"                  <light>          (AllLights, Dining) { channel="mqtt:topic:rpi:salajantarTH:mesaLight" }
-Switch   EntranceLight        "Entrada"               <light>          (AllLights, Dining) { channel="mqtt:topic:rpi:salajantarTH:entradaLight" }
-Switch   PassingLight         "Passagem"              <light>          (AllLights, Dining) { channel="mqtt:topic:rpi:salajantarTH:passagemLight" }
-String   DiningVersion        "Dining Version [%s]"   <settings>       (Dining, SonoffMaintenance) { channel="mqtt:topic:rpi:salajantarTH:version" }
+Group    Dining               "Sala Jantar"               <living>         (Home)
+Switch   TableLight           "Mesa"                      <light>          (AllLights, Dining) { channel="mqtt:topic:rpi:salajantarTH:mesaLight" }
+Switch   EntranceLight        "Entrada"                   <light>          (AllLights, Dining) { channel="mqtt:topic:rpi:salajantarTH:entradaLight" }
+Switch   PassingLight         "Passagem"                  <light>          (AllLights, Dining) { channel="mqtt:topic:rpi:salajantarTH:passagemLight" }
 
-Group    Hall                 "Corredor"              <living>         (Home)
-Switch   HallLight            "Corredor"              <light>          (AllLights, Hall) { channel="mqtt:topic:rpi:corredorTH:corredorLight" }
-String   HallVersion          "Hall Version [%s]"     <settings>       (Hall, SonoffMaintenance) { channel="mqtt:topic:rpi:corredorTH:version" }
+Group    Hall                 "Corredor"                  <living>         (Home)
+Switch   HallLight            "Corredor"                  <light>          (AllLights, Hall) { channel="mqtt:topic:rpi:corredorTH:corredorLight" }
 
-Group    Balcony              "Varanda"               <terrace>        (Home)
-Switch   BalconyLight         "Varanda"               <light>          (AllLights, Balcony) { channel="mqtt:topic:rpi:varandaTH:varandaLight" }
-Switch   BalconyCurtainLight  "Cortina"               <light>          (AllLights, Balcony) { channel="mqtt:topic:rpi:varandaTH:cortinaLight" }
-String   BalconyVersion       "Balcony Version [%s]"  <settings>       (Balcony, SonoffMaintenance) { channel="mqtt:topic:rpi:varandaTH:version" }
+Group    Balcony              "Varanda"                   <terrace>        (Home)
+Switch   BalconyLight         "Varanda"                   <light>          (AllLights, Balcony) { channel="mqtt:topic:rpi:varandaTH:varandaLight" }
+Switch   BalconyCurtainLight  "Cortina"                   <light>          (AllLights, Balcony) { channel="mqtt:topic:rpi:varandaTH:cortinaLight" }
 
-Group    Kitchen              "Cozinha"               <kitchen>        (Home)
-Switch   KitchenLight         "Cozinha"               <light>          (AllLights, Kitchen) { channel="mqtt:topic:rpi:cozinhaTH:cozinhaLight" }
-String   KitchenVersion       "Kitchen Version [%s]"  <settings>       (Kitchen, SonoffMaintenance) { channel="mqtt:topic:rpi:cozinhaTH:version" }
+Group    Kitchen              "Cozinha"                   <kitchen>        (Home)
+Switch   KitchenLight         "Cozinha"                   <light>          (AllLights, Kitchen) { channel="mqtt:topic:rpi:cozinhaTH:cozinhaLight" }
 
-Group    Laundry              "Lavanderia"            <washingmachine> (Home)
-Switch   LaundryLight         "Lavanderia"            <light>          (AllLights, Laundry) { channel="mqtt:topic:rpi:lavanderiaTH:lavanderiaLight" }
-String   LaundryVersion       "Laundry Version [%s]"  <settings>       (Laundry, SonoffMaintenance) { channel="mqtt:topic:rpi:lavanderiaTH:version" }
+Group    Laundry              "Lavanderia"                <washingmachine> (Home)
+Switch   LaundryLight         "Lavanderia"                <light>          (AllLights, Laundry) { channel="mqtt:topic:rpi:lavanderiaTH:lavanderiaLight" }
 
-Group    Closet               "Closet"                <bedroom>        (Home)
-Switch   ClosetLight          "Closet"                <light>          (AllLights, Closet) { channel="mqtt:topic:rpi:closetTH:closetLight" }
-Switch   MirrorLight          "Espelho"               <light>          (AllLights, Closet) { channel="mqtt:topic:rpi:closetTH:espelhoLight" }
-String   ClosetVersion        "Closet Version [%s]"   <settings>       (Closet, SonoffMaintenance) { channel="mqtt:topic:rpi:closetTH:version" }
+Group    Closet               "Closet"                    <bedroom>        (Home)
+Switch   ClosetLight          "Closet"                    <light>          (AllLights, Closet) { channel="mqtt:topic:rpi:closetTH:closetLight" }
+Switch   MirrorLight          "Espelho"                   <light>          (AllLights, Closet) { channel="mqtt:topic:rpi:closetTH:espelhoLight" }
 
-Group    Bedroom              "Quarto"                <bedroom>        (Home)
-Switch   BedroomLight1        "Luzes 1"               <light>          (AllLights, Bedroom) { channel="mqtt:topic:rpi:quartoTH:quartoLight1" }
-Switch   BedroomLight2        "Luzes 2"               <light>          (AllLights, Bedroom) { channel="mqtt:topic:rpi:quartoTH:quartoLight2" }
-Switch   BedroomLight3        "Luzes 3"               <light>          (AllLights, Bedroom) { channel="mqtt:topic:rpi:quartoTH:quartoLight3" }
-String   BedroomAirCond       "Ar"                    <climate>        (AllBroadlinks, Bedroom) { channel="mqtt:topic:rpi:quartoTH:arCondicionado" }
-String   BedroomVersion       "Bedroom Version [%s]"  <settings>       (Bedroom, SonoffMaintenance) { channel="mqtt:topic:rpi:quartoTH:version" }
+Group    Bedroom              "Quarto"                    <bedroom>        (Home)
+Switch   BedroomLight1        "Luzes 1"                   <light>          (AllLights, Bedroom) { channel="mqtt:topic:rpi:quartoTH:quartoLight1" }
+Switch   BedroomLight2        "Luzes 2"                   <light>          (AllLights, Bedroom) { channel="mqtt:topic:rpi:quartoTH:quartoLight2" }
+Switch   BedroomLight3        "Luzes 3"                   <light>          (AllLights, Bedroom) { channel="mqtt:topic:rpi:quartoTH:quartoLight3" }
+String   BedroomAirCond       "Ar"                        <climate>        (AllBroadlinks, Bedroom) { channel="mqtt:topic:rpi:quartoTH:arCondicionado" }
 
-Group    Office               "Escritório"            <office>         (Home)
-Switch   OfficeLight          "Trilho"                <light>          (AllLights, Office) { channel="mqtt:topic:rpi:officeTH:officeLight" }
-String   OfficeVersion        "Office Version [%s]"   <settings>       (Office, SonoffMaintenance) { channel="mqtt:topic:rpi:officeTH:version" }
+Group    Office               "Escritório"                <office>         (Home)
+Switch   OfficeLight          "Trilho"                    <light>          (AllLights, Office) { channel="mqtt:topic:rpi:officeTH:officeLight" }
