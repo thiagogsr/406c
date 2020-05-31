@@ -54,7 +54,7 @@ Group    Bedroom              "Quarto"                    <bedroom>        (Home
 Switch   BedroomLight1        "Luzes 1"                   <light>          (AllLights, Bedroom) { channel="mqtt:topic:rpi:quartoTH:quartoLight1" }
 Switch   BedroomLight2        "Luzes 2"                   <light>          (AllLights, Bedroom) { channel="mqtt:topic:rpi:quartoTH:quartoLight2" }
 Switch   BedroomLight3        "Luzes 3"                   <light>          (AllLights, Bedroom) { channel="mqtt:topic:rpi:quartoTH:quartoLight3" }
-String   BedroomAirCond       "Ar"                        <climate>        (AllBroadlinks, Bedroom) { channel="mqtt:topic:rpi:quartoTH:arCondicionado" }
+String   BedroomAirCond       "Ar-condicionado"           <climate>        (AllBroadlinks, Bedroom) { channel="mqtt:topic:rpi:quartoTH:arCondicionado" }
 
 Group    Office               "Escritório"                <office>         (Home)
 Switch   OfficeLight          "Trilho"                    <light>          (AllLights, Office) { channel="mqtt:topic:rpi:officeTH:officeLight" }
