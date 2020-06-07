@@ -1,6 +1,0 @@
-rule "Broadlinks actions"
-when
-    Item BedroomAirCond received command
-then
-    BedroomAirCond.postUpdate(NULL)
-end
