@@ -5,7 +5,7 @@ Description=Broadlink MQTT
 After=network.target
 Type=simple
 Restart=always
-RestartSec=1
+RestartSec=10
 User=openhabian
 ExecStart=/usr/bin/python /home/openhabian/broadlink-mqtt/mqtt.py
 
