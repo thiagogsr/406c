@@ -7,7 +7,7 @@ Type=simple
 Restart=always
 RestartSec=10
 User=openhabian
-ExecStart=/usr/bin/python /home/openhabian/broadlink-mqtt/mqtt.py
+ExecStart=/usr/bin/python3 /home/openhabian/broadlink-mqtt/mqtt.py
 
 [Install]
 WantedBy=multi-user.target

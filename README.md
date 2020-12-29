@@ -34,7 +34,7 @@ device_mac = '[broadlink-mac]'
 Then install its requirements
 
 ```
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 ```
 
 Transfer broadlink commands
@@ -63,24 +63,24 @@ sudo systemctl start broadlink-mqtt
 Install easy_install if not yet available
 
 ```
-sudo python /usr/lib/python2.7/dist-packages/easy_install.py speedtest-cli
+sudo python /usr/lib/python3/dist-packages/easy_install.py speedtest-cli
 ```
 
-## OpenHAB2
+## OpenHAB
 
-Transfer openhab2 Files
+Transfer openhab Files
 
 ```
-scp openhab2/items/* openhabian@[raspberry-ip]:/etc/openhab2/items
-scp openhab2/sitemaps/* openhabian@[raspberry-ip]:/etc/openhab2/sitemaps
-scp openhab2/rules/* openhabian@[raspberry-ip]:/etc/openhab2/rules
-scp openhab2/things/* openhabian@[raspberry-ip]:/etc/openhab2/things
-scp openhab2/services/* openhabian@[raspberry-ip]:/etc/openhab2/services
+scp openhab/items/* openhabian@[raspberry-ip]:/etc/openhab/items
+scp openhab/sitemaps/* openhabian@[raspberry-ip]:/etc/openhab/sitemaps
+scp openhab/rules/* openhabian@[raspberry-ip]:/etc/openhab/rules
+scp openhab/things/* openhabian@[raspberry-ip]:/etc/openhab/things
+scp openhab/services/* openhabian@[raspberry-ip]:/etc/openhab/services
 ```
 
 ## Docs
 
-- [Openhab2](https://www.openhab.org/docs/)
+- [Openhab](https://www.openhab.org/docs/)
 - [MQTT2 Binding](https://www.openhab.org/addons/bindings/mqtt/)
 - [Tasmota](https://github.com/arendst/Sonoff-Tasmota/wiki)
 - [Sonoff](https://sonoff.itead.cc/en/products/residential/sonoff-t1-us)
