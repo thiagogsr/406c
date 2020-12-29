@@ -24,7 +24,7 @@ then
     SpeedtestResultDate.postUpdate(new DateTimeType())
 
     // execute the script, you may have to change the path depending on your system
-    var String speedtestCliOutput = executeCommandLine("/usr/local/bin/speedtest-cli@@--simple", 120*1000)
+    var String speedtestCliOutput = executeCommandLine(Duration.ofSeconds(120*1000), "speedtest-cli", "--simple")
 
     // for debugging:
     //var String speedtestCliOutput = "Ping: 43.32 ms\nDownload: 21.64 Mbit/s\nUpload: 4.27 Mbit/s"
@@ -33,11 +33,11 @@ then
     SpeedtestRunning.postUpdate("Resultados...")
 
     // starts off with a fairly simple error check, should be enough to catch all problems I can think of
-    if (speedtestCliOutput.startsWith("Ping") && speedtestCliOutput.endsWith("Mbit/s")) {
+    if (speedtestCliOutput.startsWith("Ping")) {
         var String[] results = speedtestCliOutput.split("\\r?\\n")
-        var float ping = new java.lang.Float(results.get(0).split(" ").get(1))
-        var float down = new java.lang.Float(results.get(1).split(" ").get(1))
-        var float up   = new java.lang.Float(results.get(2).split(" ").get(1))
+        var float ping = Float.parseFloat(results.get(0).split(" ").get(1))
+        var float down = Float.parseFloat(results.get(1).split(" ").get(1))
+        var float up   = Float.parseFloat(results.get(2).split(" ").get(1))
         SpeedtestResultPing.postUpdate(ping)
         SpeedtestResultDown.postUpdate(down)
         SpeedtestResultUp.postUpdate(up)
