@@ -57,13 +57,13 @@ sitemap 406c label="406C" {
 
   Frame label="Escritório" {
     Default item=OfficeLight
-    Selection item=OfficeAirCond mappings=[off="Off", on19="19 °C", on20="20 °C", on21="21 °C", on22="22 °C", on23="23 °C", on24="24 °C"]
+    Selection item=OfficeAirCond mappings=[off="Off", on19="19 °C", on20="20 °C", on21="21 °C", on22="22 °C", on23="23 °C", on24="24 °C", on25="25 °C", on26="26 °C"]
   }
 
   Frame label="Quarto" {
     Default item=BedroomLight1
     Default item=BedroomLight2
     Default item=BedroomLight3
-    Selection item=BedroomAirCond mappings=[off="Off", on19="19 °C", on20="20 °C", on21="21 °C", on22="22 °C", on23="23 °C", on24="24 °C"]
+    Selection item=BedroomAirCond mappings=[off="Off", on19="19 °C", on20="20 °C", on21="21 °C", on22="22 °C", on23="23 °C", on24="24 °C", on25="25 °C", on26="26 °C"]
   }
 }
