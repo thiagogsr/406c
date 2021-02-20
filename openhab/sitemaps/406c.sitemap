@@ -57,6 +57,7 @@ sitemap 406c label="406C" {
 
   Frame label="Escritório" {
     Default item=OfficeLight
+    Selection item=OfficeAirCond mappings=[off="Off", on19="19 °C", on20="20 °C", on21="21 °C", on22="22 °C", on23="23 °C", on24="24 °C"]
   }
 
   Frame label="Quarto" {

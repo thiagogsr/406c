@@ -23,12 +23,10 @@ Set a fixed IP for the raspberry on your router.
 git clone https://github.com/eschava/broadlink-mqtt.git
 ```
 
-Edit the `custom.conf` with:
+Transfer the config file:
 
 ```
-device_type = 'rm'
-device_host = '[broadlink-ip]'
-device_mac = '[broadlink-mac]'
+scp -r broadlink-mqtt/custom.conf openhabian@[raspberry-ip]:~/broadlink-mqtt
 ```
 
 Then install its requirements
@@ -45,10 +43,10 @@ scp -r broadlink/* openhabian@[raspberry-ip]:~/broadlink-mqtt/commands
 
 Ensure broadlink is connected on same network.
 
-Move `broadlink-mqtt.service` to `/etc/systemd/system/broadlink-mqtt.service`
+Transfer the service file:
 
 ```
-scp broadlink-mqtt.service openhabian@[raspberry-ip]:/etc/systemd/system/broadlink-mqtt.service
+scp broadlink-mqtt/broadlink-mqtt.service openhabian@[raspberry-ip]:/etc/systemd/system/broadlink-mqtt.service
 ```
 
 Then start it

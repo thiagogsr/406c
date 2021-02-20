@@ -58,3 +58,4 @@ String   BedroomAirCond       "Ar-condicionado"           <climate>        (AllB
 
 Group    Office               "Escritório"                <office>         (Home)
 Switch   OfficeLight          "Trilho"                    <light>          (AllLights, Office) { channel="mqtt:topic:rpi:officeTH:officeLight" }
+String   OfficeAirCond        "Ar-condicionado"           <climate>        (AllBroadlinks, Office) { channel="mqtt:topic:rpi:officeTH:arCondicionado" }
