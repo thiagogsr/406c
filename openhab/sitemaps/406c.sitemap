@@ -1,6 +1,6 @@
 sitemap 406c label="406C" {
   Frame {
-    Switch item=HouseAction mappings=[houseoff="Desligar tudo"]
+    Switch item=HouseOffButton mappings=[houseoff="Desligar tudo"]
     Group item=SonoffMaintenance {
       Switch item=SonoffAction mappings=[restart="Restart", status="Status", upgrade="Upgrade"]
       Default item=TasmotaRelease
@@ -30,10 +30,9 @@ sitemap 406c label="406C" {
   }
 
   Frame label="Sala" {
-    Default item=SofaLight
-    Default item=TableLight
     Default item=EntranceLight
-    Default item=PassingLight
+    Default item=TableLight
+    Default item=SofaLight
     Default item=HallLight
   }
 

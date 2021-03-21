@@ -12,7 +12,7 @@ String   SpeedtestRunning     "Speedtest running ... [%s]"                      
 Switch   SpeedtestRerun       "Start manually"                                     <network>      (gSpeedtest)
 DateTime SpeedtestResultDate  "Last executed [%1$td.%1$tm.%1$tY, %1$tH:%1$tM]"     <network>      (gSpeedtest)
 
-String   HouseAction          "406C"                      <house>          (Home)
+String   HouseOffButton       "406C"                      <house>          (Home)
 
 Group    SonoffMaintenance    "Maintenance"               <settings>       (Home)
 String   SonoffAction         "Action"                    <settings>       (SonoffMaintenance)
@@ -31,7 +31,7 @@ Switch   SofaLight            "Sofá"                      <light>          (All
 Group    Dining               "Sala Jantar"               <living>         (Home)
 Switch   TableLight           "Mesa"                      <light>          (AllLights, Dining) { channel="mqtt:topic:rpi:salajantarTH:mesaLight" }
 Switch   EntranceLight        "Entrada"                   <light>          (AllLights, Dining) { channel="mqtt:topic:rpi:salajantarTH:entradaLight" }
-Switch   PassingLight         "Passagem"                  <light>          (AllLights, Dining) { channel="mqtt:topic:rpi:salajantarTH:passagemLight" }
+Switch   HouseOffSwitch       "House Off"                 <house>          (Home) { channel="mqtt:topic:rpi:salajantarTH:desligarTudo" }
 
 Group    Hall                 "Corredor"                  <living>         (Home)
 Switch   HallLight            "Corredor"                  <light>          (AllLights, Hall) { channel="mqtt:topic:rpi:corredorTH:corredorLight" }

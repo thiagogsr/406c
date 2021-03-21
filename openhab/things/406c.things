@@ -14,9 +14,9 @@ Bridge mqtt:broker:rpi [ host="localhost", secure=false, clientID="openhabClient
 
   Thing topic salajantarTH {
     Channels:
-      Type switch : mesaLight [stateTopic="stat/sala-jantar/POWER3", commandTopic="cmnd/sala-jantar/POWER3", on="ON", off="OFF"]
-      Type switch : entradaLight [stateTopic="stat/sala-jantar/POWER2", commandTopic="cmnd/sala-jantar/POWER2", on="ON", off="OFF"]
-      Type switch : passagemLight [stateTopic="stat/sala-jantar/POWER1", commandTopic="cmnd/sala-jantar/POWER1", on="ON", off="OFF"]
+      Type switch : entradaLight [stateTopic="stat/sala-jantar/POWER1", commandTopic="cmnd/sala-jantar/POWER1", on="ON", off="OFF"]
+      Type switch : mesaLight [stateTopic="stat/sala-jantar/POWER2", commandTopic="cmnd/sala-jantar/POWER2", on="ON", off="OFF"]
+      Type switch : desligarTudo [stateTopic="stat/sala-jantar/POWER3", commandTopic="cmnd/sala-jantar/POWER3", on="ON", off="OFF"]
       Type string : version [stateTopic="stat/sala-jantar/STATUS2", transformationPattern="JSONPATH:$.StatusFWR.Version"]
   }
 

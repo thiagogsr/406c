@@ -1,0 +1,12 @@
+rule "House off"
+when
+    Item HouseOffButton received command or Item HouseOffSwitch changed
+then
+    logInfo("house.rules", "House Off")
+
+    AllLights.members.forEach[i| i.sendCommand(OFF)]
+    AllBroadlinks.members.forEach[i| i.sendCommand("off")]
+
+    HouseOffButton.postUpdate(NULL)
+    HouseOffSwitch.postUpdate(OFF)
+end
