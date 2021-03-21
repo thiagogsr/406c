@@ -6,7 +6,6 @@ when
 then
     createTimer(now.plusSeconds(195)) [|
         if (SpeedtestRerun.state == NULL) SpeedtestRerun.postUpdate(OFF)
-        if (SpeedtestRunning.state == NULL) SpeedtestRunning.postUpdate("-")
         if (SpeedtestSummary.state == NULL || SpeedtestSummary.state == "")
             SpeedtestSummary.postUpdate("!? (desconhecido)")
     ]
@@ -18,40 +17,36 @@ when
     Item SpeedtestRerun received command ON
 then
     logInfo(filename, "--> speedtest executed...")
-    SpeedtestRunning.postUpdate("A medição está em execução ...")
 
     // update timestamp for last execution
     SpeedtestResultDate.postUpdate(new DateTimeType())
 
     // execute the script, you may have to change the path depending on your system
-    var String speedtestCliOutput = executeCommandLine(Duration.ofSeconds(120*1000), "speedtest-cli", "--simple")
+    var String speedtestCliOutput = executeCommandLine(Duration.ofSeconds(120), "speedtest", "-f", "csv", "--accept-license", "--accept-gdpr")
 
     // for debugging:
     //var String speedtestCliOutput = "Ping: 43.32 ms\nDownload: 21.64 Mbit/s\nUpload: 4.27 Mbit/s"
     //logInfo(filename, "--> speedtest output:\n" + speedtestCliOutput + "\n\n")
 
-    SpeedtestRunning.postUpdate("Resultados...")
+    var String[] results   = speedtestCliOutput.split(",")
+    var String server      = results.get(0).replace("\"", "")
+    var float latency      = Float.parseFloat(results.get(2).replace("\"", ""))
+    var float jitter       = Float.parseFloat(results.get(3).replace("\"", ""))
+    var float packageLoss  = Float.parseFloat(results.get(4).replace("\"", ""))
+    var float download     = Float.parseFloat(results.get(5).replace("\"", "")) / 100000
+    var float upload       = Float.parseFloat(results.get(6).replace("\"", "")) / 100000
 
-    // starts off with a fairly simple error check, should be enough to catch all problems I can think of
-    if (speedtestCliOutput.startsWith("Ping")) {
-        var String[] results = speedtestCliOutput.split("\\r?\\n")
-        var float ping = Float.parseFloat(results.get(0).split(" ").get(1))
-        var float down = Float.parseFloat(results.get(1).split(" ").get(1))
-        var float up   = Float.parseFloat(results.get(2).split(" ").get(1))
-        SpeedtestResultPing.postUpdate(ping)
-        SpeedtestResultDown.postUpdate(down)
-        SpeedtestResultUp.postUpdate(up)
-        SpeedtestSummary.postUpdate(String::format("ᐁ  %.1f Mbit/s  ᐃ %.1f Mbit/s (%.0f ms)", down, up, ping))
-        SpeedtestRunning.postUpdate("-")
-        logInfo(filename, "--> speedtest finished.")
-    } else {
-        SpeedtestResultPing.postUpdate(0)
-        SpeedtestResultDown.postUpdate(0)
-        SpeedtestResultUp.postUpdate(0)
-        SpeedtestSummary.postUpdate("(desconhecido)")
-        SpeedtestRunning.postUpdate("Erro durante a execução")
-        logError(filename, "--> speedtest failed. Output:\n" + speedtestCliOutput + "\n\n")
-    }
+    SpeedtestResultServer.postUpdate(server)
+    SpeedtestResultLatency.postUpdate(latency)
+    SpeedtestResultJitter.postUpdate(jitter)
+    SpeedtestResultPackageLoss.postUpdate(packageLoss)
+    SpeedtestResultDownload.postUpdate(download)
+    SpeedtestResultUpload.postUpdate(upload)
+
+    SpeedtestSummary.postUpdate(String::format("ᐁ  %.1f Mbps  ᐃ %.1f Mbps", download, upload))
+
+    logInfo(filename, "--> speedtest finished.")
+
     SpeedtestRerun.postUpdate(OFF)
 end
 

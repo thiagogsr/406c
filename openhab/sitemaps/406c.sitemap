@@ -17,13 +17,15 @@ sitemap 406c label="406C" {
   Frame {
     Text item=SpeedtestSummary {
       Frame label="Resultados" {
-        Text item=SpeedtestResultDown
-        Text item=SpeedtestResultUp
-        Text item=SpeedtestResultPing
+        Text item=SpeedtestResultDownload
+        Text item=SpeedtestResultUpload
+        Text item=SpeedtestResultLatency
+        Text item=SpeedtestResultJitter
+        Text item=SpeedtestResultPackageLoss
+        Text item=SpeedtestResultServer
       }
       Frame label="Controle" {
         Text item=SpeedtestResultDate
-        Text item=SpeedtestRunning label="Speedtest [%s]" visibility=[SpeedtestRunning != "-"]
         Switch item=SpeedtestRerun mappings=[ON="Start"]
       }
     }

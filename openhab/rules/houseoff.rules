@@ -1,6 +1,6 @@
 rule "House off"
 when
-    Item HouseOffButton received command or Item HouseOffSwitch changed
+    Item HouseOffButton received command or Item HouseOffSwitch changed from OFF to ON
 then
     logInfo("house.rules", "House Off")
 

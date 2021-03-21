@@ -58,11 +58,7 @@ sudo systemctl start broadlink-mqtt
 
 ## Speed test
 
-Install easy_install if not yet available
-
-```
-sudo python /usr/lib/python3/dist-packages/easy_install.py speedtest-cli
-```
+Follow the instructions to install the cli: [https://www.speedtest.net/pt/apps/cli](https://www.speedtest.net/pt/apps/cli)
 
 ## OpenHAB
 
